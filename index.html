@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Dice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .dice-container {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+        perspective: 600px;
+      }
+      .dice {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s ease-in-out;
+      }
+      .face {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background: white;
+        border: 2px solid black;
+      }
+      .front {
+        transform: translateZ(50px);
+        background: #e96b96;
+      }
+      .back {
+        transform: rotateY(180deg) translateZ(50px);
+        background: #f7c2aa;
+      }
+      .right {
+        transform: rotateY(90deg) translateZ(50px);
+        background: #76a4ff;
+      }
+      .left {
+        transform: rotateY(-90deg) translateZ(50px);
+        background: #ebeda4;
+      }
+      .top {
+        transform: rotateX(90deg) translateZ(50px);
+        background: #af87f9;
+      }
+      .bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+        background: #87eff9;
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen bg-gray-100"
+  >
+    <div class="dice-container">
+      <div class="dice" id="dice1">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="dice" id="dice2">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="dice" id="dice3">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+    </div>
+    <button
+      onclick="rollDice()"
+      class="mt-8 px-6 py-3 bg-blue-500 text-white rounded shadow-lg hover:bg-blue-600 transition"
+    >
+      Roll Dice
+    </button>
+
+    <script>
+      function rollDice() {
+        for (let i = 1; i <= 3; i++) {
+          const x = Math.floor(Math.random() * 4) * 90;
+          const y = Math.floor(Math.random() * 4) * 90;
+          document.getElementById(
+            `dice${i}`
+          ).style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+        }
+      }
+    </script>
+  </body>
+</html>
