@@ -1,0 +1,165 @@
+/* General body styling */
+body {
+  background-color: #121212; /* Darker background for better contrast */
+  color: #e0e0e0; /* Light text for readability */
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #1f2937; /* Darker gray for header */
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+header button {
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header button:hover {
+  transform: scale(1.05);
+}
+
+/* Dice container styling */
+.dice-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 800px;
+  margin: 40px 0;
+}
+
+/* Dice styling */
+.dice {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+  color: transparent !important;
+}
+
+.face {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  background: #ffffff;
+  border: 2px solid #333;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.front {
+  transform: translateZ(60px);
+  background: #e96b96;
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(60px);
+  background: #f7c2aa;
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(60px);
+  background: #76a4ff;
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(60px);
+  background: #ebeda4;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(60px);
+  background: #af87f9;
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(60px);
+  background: #87eff9;
+}
+
+/* Roll Dice button styling */
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #1f2937;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #e0e0e0;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b6b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Footer styling */
+footer {
+  background-color: #1f2937;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
